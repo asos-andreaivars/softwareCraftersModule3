@@ -10,19 +10,19 @@
 
         public void StartGame()
         {
-            
+
         }
 
         public string CurrentPlayer()
         {
-            if(_turn == 0)
+            if (_turn % 2 == 0)
             {
                 return "X";
             }
             return "O";
         }
 
-        public void MakeMove(int x, int y)
+        public void MakeMove(int x)
         {
             _turn++;
         }

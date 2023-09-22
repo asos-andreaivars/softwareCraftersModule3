@@ -6,17 +6,29 @@ namespace TicTacToe.UnitTests
     public class BoardClassShould
     {
 
+        [Test]
+        public void CreateAnEmptyBoardGivenNoMovesHaveBeenMade()
+        {
+            var board = new Board();
+
+            var visualBoard = board.GetVisualBoard();
+
+            Assert.That(visualBoard, Is.EqualTo("   |   |   \n   |   |   \n   |   |   "));
+
+        }
+
+        [Test]
+        public void WhenAMoveIsMadeTheBoardIsUpdated()
+        {
+            var board = new Board();
+
+            board.AddToBoard(1, "X");
+            var visualBoard = board.GetVisualBoard();
 
 
-        //[Test]
-        //public void CreateAnEmptyBoardGivenNoMovesHaveBeenMade()
-        //{
-        //    var board = new Board();
+            Assert.That(visualBoard, Is.EqualTo("   | X |   \n   |   |   \n   |   |   "));
 
-
-
-        //}
-
+        }
 
 
     }
