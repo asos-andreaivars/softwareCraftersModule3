@@ -34,6 +34,7 @@ namespace TicTacToe.UnitTests
 
             gameController.StartGame();
 
+            gameController.MakeMove(0, 0);
             gameController.MakeMove(0, 1);
 
             Assert.That(gameController.CurrentPlayer, Is.EqualTo("X"));
