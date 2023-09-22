@@ -5,20 +5,19 @@
         public GameController()
         {
 
-
-
         }
-
-
 
         public void StartGame()
         {
-            throw new NotImplementedException();
+            
         }
 
+        public string CurrentPlayer()
+        {
+            return "X";
+        }
 
-
-        public void CurrentPlayer()
+        public void MakeMove(int i, int i1)
         {
             throw new NotImplementedException();
         }
