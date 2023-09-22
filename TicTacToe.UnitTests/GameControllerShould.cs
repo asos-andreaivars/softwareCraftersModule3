@@ -26,5 +26,17 @@ namespace TicTacToe.UnitTests
 
             Assert.That(gameController.CurrentPlayer, Is.EqualTo("O"));
         }
+
+        [Test]
+        public void EnsureXGoesThird()
+        {
+            var gameController = new GameController();
+
+            gameController.StartGame();
+
+            gameController.MakeMove(0, 1);
+
+            Assert.That(gameController.CurrentPlayer, Is.EqualTo("X"));
+        }
     }
 }

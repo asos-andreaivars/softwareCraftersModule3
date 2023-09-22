@@ -2,9 +2,10 @@
 {
     public class GameController
     {
+        private int _turn;
         public GameController()
         {
-
+            _turn = 0;
         }
 
         public void StartGame()
@@ -14,12 +15,16 @@
 
         public string CurrentPlayer()
         {
-            return "X";
+            if(_turn == 0)
+            {
+                return "X";
+            }
+            return "O";
         }
 
-        public void MakeMove(int i, int i1)
+        public void MakeMove(int x, int y)
         {
-            throw new NotImplementedException();
+            _turn++;
         }
     }
 }
