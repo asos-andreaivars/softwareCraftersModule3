@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iBmo7b0PnVlBgbrqGhfSSkKe6zkfPhmlkvh3B3Vj00i8o387O12Qstlalg/f2NL/Cmcr3vXv563gPS9j0kRWow==",
+  "dgSpecHash": "Q3KCQQmdz1SospQwz9d57i88F/KnnYlftcer/dA306rEaFuXvnNUPuqUJtSe/EgjTAVi+XwCB7TCNT8iZj35iQ==",
   "success": true,
-  "projectFilePath": "C:\\git\\courses\\courses\\software-crafters-csharp-module3\\labs\\TicTacToe.UnitTests\\TicTacToe.UnitTests.csproj",
+  "projectFilePath": "C:\\git\\courses\\courses\\softwareCraftersModule3\\TicTacToe.UnitTests\\TicTacToe.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andrea.ivars\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\andrea.ivars\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",
