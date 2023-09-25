@@ -17,40 +17,21 @@ namespace TicTacToe.UnitTests
 
         }
 
-        [Test]
-        public void WhenAMoveIsMadeTheBoardIsUpdated()
+        [TestCase(new char[] { 'X' }, new int[] { 1 }, "   | X |   \n   |   |   \n   |   |   ")]
+        [TestCase(new char[] { 'X', 'O' }, new int[] { 1, 2 }, "   | X | O \n   |   |   \n   |   |   ")]
+        [TestCase(new char[] { 'X', 'O', 'X' }, new int[] { 1, 2, 0 }, " X | X | O \n   |   |   \n   |   |   ")]
+        public void WhenMovesAreMadeTheBoardIsUpdated(char[] players, int[] positions, string result)
         {
             var board = new Board();
 
-            board.AddToBoard(1, 'X');
+            for(int i = 0; i < players.Length; i++)
+            {
+                board.AddToBoard(positions[i], players[i]);
+            }
+
             var visualBoard = board.GetVisualBoard();
 
-            Assert.That(visualBoard, Is.EqualTo("   | X |   \n   |   |   \n   |   |   "));
-        }
-
-        [Test]
-        public void WhenTwoMovesAreMadeTheBoardIsUpdated()
-        {
-            var board = new Board();
-
-            board.AddToBoard(1, 'X');
-            board.AddToBoard(2, 'O');
-            var visualBoard = board.GetVisualBoard();
-
-            Assert.That(visualBoard, Is.EqualTo("   | X | O \n   |   |   \n   |   |   "));
-        }
-
-        [Test]
-        public void WhenThreeMovesAreMadeTheBoardIsUpdated()
-        {
-            var board = new Board();
-
-            board.AddToBoard(1, 'X');
-            board.AddToBoard(2, 'O');
-            board.AddToBoard(0, 'X');
-            var visualBoard = board.GetVisualBoard();
-
-            Assert.That(visualBoard, Is.EqualTo(" X | X | O \n   |   |   \n   |   |   "));
+            Assert.AreEqual(result, visualBoard.ToString());
         }
     }
 }
