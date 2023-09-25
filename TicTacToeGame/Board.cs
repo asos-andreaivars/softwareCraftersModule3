@@ -2,7 +2,7 @@
 {
     public class Board
     {
-        private char[] _board;
+        private readonly char[] _board;
 
         public Board()
         {
@@ -14,8 +14,8 @@
             string visualBoard = "";
             for (int i = 0; i < _board.Length; i++)
             {
-                visualBoard += $" {_board[i]} " ;
-                if ((i+1) % 3 ==0)
+                visualBoard += $" {_board[i]} ";
+                if ((i + 1) % 3 == 0)
                 {
                     visualBoard += "\n";
                 }
@@ -24,12 +24,17 @@
                     visualBoard += "|";
                 }
             }
-            return visualBoard.Substring(0, visualBoard.Length - 1);
+            return visualBoard[..^1];
         }
 
-        public void AddToBoard(int position, char player)
+        public bool AddToBoard(int position, char player)
         {
-            _board[position] = player;
+            if (_board[position].Equals(' '))
+            {
+                _board[position] = player;
+                return true;
+            }
+            return false;
         }
     }
 }
