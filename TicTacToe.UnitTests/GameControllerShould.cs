@@ -50,5 +50,18 @@ namespace TicTacToe.UnitTests
             Assert.IsTrue(_sut.IsComplete);
             Assert.IsFalse(_sut.HasWinner);
         }
+
+        [Test]
+        public void WhenThreeInARowThenGameIsWon()
+        {
+            _sut.MakeMove(0);
+            _sut.MakeMove(3);
+            _sut.MakeMove(1);
+            _sut.MakeMove(4);
+            _sut.MakeMove(2);
+
+            Assert.IsTrue(_sut.IsComplete);
+            Assert.IsTrue(_sut.HasWinner);
+        }
     }
 }
