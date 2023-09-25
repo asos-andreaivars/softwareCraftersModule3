@@ -10,13 +10,12 @@ namespace TicTacToe.UnitTests
         public void SetUp()
         {
             _sut = new GameController();
-            _sut.StartGame();
         }
 
-        [TestCase("X", new int[] { })]
-        [TestCase("O", new int[] { 1 })]
-        [TestCase("X", new int[] { 3, 5 })]
-        public void EnsureXIsOddMovesOIsEvenMoves(string player, int[] positions)
+        [TestCase('X', new int[] { })]
+        [TestCase('O', new int[] { 1 })]
+        [TestCase('X', new int[] { 3, 5 })]
+        public void EnsureXIsOddMovesOIsEvenMoves(char player, int[] positions)
         {
             foreach (var position in positions)
             {
