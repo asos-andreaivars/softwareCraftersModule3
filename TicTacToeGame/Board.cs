@@ -36,5 +36,18 @@
             }
             return false;
         }
+
+        public List<int> GetPlayerPositionsOnBoard(char player)
+        {
+            var positions = new List<int>();
+            for (var i = 0; i < _board.Length; i++)
+            {
+                if (_board[i].Equals(player))
+                {
+                    positions.Add(i);
+                }
+            }
+            return positions;
+        }
     }
 }
