@@ -45,5 +45,6 @@ namespace TicTacToe.UnitTests
 
             Assert.AreEqual("   | X |   \n   |   |   \n   |   |   ", visualBoard.ToString());
         }
+
     }
 }
