@@ -38,8 +38,8 @@ namespace TicTacToe.UnitTests
         [Test]
         public void WhenMoveIsMadeAndPlayerHasAlreadyPlayedThereThenMoveNotMade()
         {
-            _sut.AddToBoard(0, 'X');
-            _sut.AddToBoard(0, 'O');
+            _sut.AddToBoard(1, 'X');
+            _sut.AddToBoard(1, 'O');
 
             var visualBoard = _sut.GetVisualBoard();
 
