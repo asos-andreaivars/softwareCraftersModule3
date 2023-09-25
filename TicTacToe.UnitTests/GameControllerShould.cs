@@ -5,23 +5,34 @@ namespace TicTacToe.UnitTests
 {
     public class GameControllerShould
     {
+        private GameController _sut;
+        [SetUp]
+        public void SetUp()
+        {
+            _sut = new GameController();
+            _sut.StartGame();
+        }
 
         [TestCase("X", new int[] { })]
         [TestCase("O", new int[] { 1 })]
         [TestCase("X", new int[] { 3, 5 })]
-        public void EnsureXIsOddMovesOisEvenMoves(string player, int[] positions)
+        public void EnsureXIsOddMovesOIsEvenMoves(string player, int[] positions)
         {
-            var gameController = new GameController();
-
-            gameController.StartGame();
-
             foreach (var position in positions)
             {
-                gameController.MakeMove((int)position);
+                _sut.MakeMove(position);
             }
 
-            Assert.That(gameController.CurrentPlayer, Is.EqualTo(player));
+            Assert.AreEqual(_sut.CurrentPlayer(), player);
         }
 
+        [Test]
+        public void EnsureMoveCannotBeMadeInTheSamePlaceTwice()
+        {
+            _sut.MakeMove(0);
+            _sut.MakeMove(0);
+
+            Assert.AreEqual(_sut.CurrentPlayer(), 'O');
+        }
     }
 }
