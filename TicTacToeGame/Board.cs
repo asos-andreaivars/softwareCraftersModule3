@@ -29,6 +29,7 @@
 
         public bool AddToBoard(int position, char player)
         {
+            if (position >= _board.Length || position < 0) return false;
             if (_board[position].Equals(' '))
             {
                 _board[position] = player;

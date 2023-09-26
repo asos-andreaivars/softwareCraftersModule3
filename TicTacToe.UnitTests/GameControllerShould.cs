@@ -51,14 +51,15 @@ namespace TicTacToe.UnitTests
             Assert.IsFalse(_sut.HasWinner);
         }
 
-        [Test]
-        public void WhenThreeInARowThenGameIsWon()
+        [TestCase(new int[] { 0, 3, 1, 4, 2 })]
+        [TestCase(new int[] { 0, 2, 3, 4, 6 })]
+        [TestCase(new int[] { 0, 2, 4, 3, 8 })]
+        public void WhenThreeInARowThenGameIsWon(int[] moves)
         {
-            _sut.MakeMove(0);
-            _sut.MakeMove(3);
-            _sut.MakeMove(1);
-            _sut.MakeMove(4);
-            _sut.MakeMove(2);
+            foreach (int move in moves)
+            {
+                _sut.MakeMove(move);
+            }
 
             Assert.IsTrue(_sut.IsComplete);
             Assert.IsTrue(_sut.HasWinner);

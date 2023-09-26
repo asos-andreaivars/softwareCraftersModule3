@@ -46,5 +46,13 @@ namespace TicTacToe.UnitTests
             Assert.AreEqual("   | X |   \n   |   |   \n   |   |   ", visualBoard.ToString());
         }
 
+        [Test]
+        public void EnsureThatMoveIsInsideTheBoard()
+        {
+            var moveHasBeenMade = _sut.AddToBoard(10, 'X');
+
+            Assert.IsFalse(moveHasBeenMade);
+        }
+
     }
 }
